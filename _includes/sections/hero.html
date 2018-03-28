@@ -2,12 +2,34 @@
 <div class="wrapper" data-grid="center spacing">
 
     <div data-cell="2of3">
-        <h2 class="page-title">Here is Johnnie!</h2>
-        <p>This is my empty project for new websites... maybe apps too. 
-        Just everything I need to bootstrap a project.</p>
-        <p><a href="https://github.com/johnylab/johnyplate" data-btn>Download on Github</a></p>
+        <div class="page-content slider carousel">
+            <a href="#thumb1"><article class="slide crop" style="background-image: url(../img/banners/slider-1.jpg);"></article></a>
+            <a href="#thumb2"><article class="slide crop" style="background-image: url(../img/banners/slider-2.jpg);"></article></a>
+            <a href="#thumb3"><article class="slide crop" style="background-image: url(../img/banners/slider-3.jpg);"></article></a>
+            <a href="#thumb1"><article class="slide crop" style="background-image: url(../img/banners/slider-1.jpg);"></article></a>
+            <a href="#thumb2"><article class="slide crop" style="background-image: url(../img/banners/slider-2.jpg);"></article></a>
+            <a href="#thumb3"><article class="slide crop" style="background-image: url(../img/banners/slider-3.jpg);"></article></a>
+        </div>
+        
     </div>
 
-    <div data-cell="1of3 fill">{% include svg/idea.svg %}</div>
+    <div data-modal="" data-grid="center" id="thumb1">      
+        <a class="btn-fechar" href="#x">{% include svg/close.svg %}</a>
+        <div data-cell="">    
+                <img src="../img/banners/slider-1.jpg" />
+        </div>
+      </div>      
+      <div data-modal="" data-grid="center" id="thumb2">      
+        <a class="btn-fechar" href="#x">{% include svg/close.svg %}</a>
+        <div data-cell="">    
+                <img src="../img/banners/slider-2.jpg" />
+        </div>
+      </div>            
+      <div data-modal="" data-grid="center" id="thumb3">      
+        <a class="btn-fechar" href="#x">{% include svg/close.svg %}</a>
+        <div data-cell="">    
+                <img src="../img/banners/slider-3.jpg" />
+        </div>
+      </div>      
 
 </div>
