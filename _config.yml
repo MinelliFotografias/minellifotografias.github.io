@@ -8,6 +8,8 @@ collections:
   uploads:
     title: Uploads
     output: true
+  fotos-principais:
+    output: false    
 defaults:
 - scope:
     path: ''

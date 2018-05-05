@@ -1,9 +1,8 @@
 ---
 layout: default
 sections:
-  hero:
+  home:
     title: Home
-    classes: hero
 ---
 
 {% for s in page.sections %}
@@ -11,7 +10,7 @@ sections:
   {% assign id = s[0] %}
   {% assign section = s[1] %}
 
-  <section class="page-content section-{{ id }} {{ section.classes }}" id="{{ id }}">
+  <section class="section-{{id}}" id="{{ id }}">
 
     {% include sections/{{ id }}.html %}
 

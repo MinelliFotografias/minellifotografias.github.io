@@ -1,27 +1,22 @@
 .slider-container
-    @extend .wrapper
+    overflow: hidden
+    padding-left: $spacing-unit * 2
+    padding-right: $spacing-unit * 2
+    padding-bottom: 1%
+    margin-top: $spacing-unit
     +media-query($on-palm)
+        width: 100%
         padding: 0
 
 .slider
     position: relative
-    height: 240px
-    overflow: hidden
-    border: 1px solid $brand-color
+    height: 366px
+    //overflow: hidden
     padding: 0px
 
-    +media-query($content-width)
-        height: 179px
+    +media-query($on-palm)
+        margin-top: 21px
         
-        img
-            max-width: unset
-            height: auto
-            position: absolute
-            top: 0
-            right: 0        
-
-    +media-query($on-laptop)
-        height: 149px        
 
     .slide
         @extend %transition
@@ -36,24 +31,62 @@
         figure
             margin: 0
 
-    button
-        padding: 0
-        max-width: 58px
-        height: 240px
+            [data-cell]
+                text-align: center
+                img
+                    display: inline-block
 
-        +media-query($content-width)
-            height: 179px
+    &.carousel
 
-        +media-query($on-laptop)
-            height: 149px            
+        .slide
+            width: 15%
+            text-align: center
 
-        +media-query($on-palm)
-            height: 179px
+            @for $i from 0 through 5
+                &[data-order="#{$i}"]
+                    transform: translate(110% * $i)
+                    opacity: 1
+            &[data-order="6"]
+                transform: translate(660%)
+            &[data-order="last"]
+                transform: translate(-110%)
+                opacity: 0
+            img
+                display: inline-block
 
-    +media-query($on-palm)
-        margin-top: 21px
-        height: 179px
+        &[data-size~="2"]
+            .slide
+                width: 48%
 
+                @for $i from 0 through 1
+                    &[data-order="#{$i}"]
+                        transform: translate(110% * $i)
+                        opacity: 1
+                &[data-order="2"]
+                    transform: translate(220%)
+                    &, & + .slide
+                        opacity: 0
+                &[data-order="last"]
+                    transform: translate(-110%)
+                    opacity: 0                
+
+        &[data-size~="3"]
+            .slide
+                width: 31.3%
+                +media-query($on-palm)
+                    width: 100%
+
+                @for $i from 0 through 2
+                    &[data-order="#{$i}"]
+                        transform: translate(110% * $i)
+                        opacity: 1
+                &[data-order="3"]
+                    transform: translate(330%)
+                    &, & + .slide
+                        opacity: 0
+                &[data-order="last"]
+                    transform: translate(-110%)
+                    opacity: 0
 
 .slider-controls
     width: 100%
@@ -66,63 +99,51 @@
             width: 3em
             height: 3em
             vertical-align: text-top
+            +media-query($on-palm)
+                width: 28px
 
-.carousel
-    border: 0px
-
-    .slide
-        transform: translate(-100%) scale(.32)
-        height: 240px * 3.2
-
-        &.prev, &.next, &.current
-            transform: translate(0) scale(.32)
-        &.prev, &.next
-            opacity: 1
-        &.prev
-            transform-origin: top left
-        &.next
-            transform-origin: top right
-            + .slide:not(.prev)
-                transform: translate(100%) scale(.32)
-        &.current
-            transform-origin: top center
-
-    .crop
-        width: 100%
+    button
+        padding: 0
+        max-width: 58px
         height: 100%
-        position: relative
-        overflow: hidden
-
-        img
-            position: absolute
-            left: 50%
-            top: 50%
-            height: 100%
-            width: auto
-            max-width: unset
-            -webkit-transform: translate(-50%,-50%)
-            -ms-transform: translate(-50%,-50%)
-            -moz-transform: translate(-50%,-50%)
-            -o-transform: translate(-50%,-50%)
-            transform: translate(-50%,-50%)
-
-        img.portrait
-            width: auto
-            height: 100%
-
-button
-    &.slider-control
         border: 0px
+        cursor: pointer
+        position: absolute
+        +media-query($on-palm)
+            background-color: rgba(255, 255, 255, 0.9)
 
-    &:hover,  &:active, &:focus
-        background-color: transparent        
-        box-shadow: unset
+        &:hover,  &:active, &:focus
+            background-color: transparent
+            box-shadow: unset
+            +media-query($on-palm)
+                background-color: rgba(255, 255, 255, 0.9)            
 
-    &.next > svg
-        float: right   
-        margin-right: 10px     
-
-    &.prev > svg
-        float: left       
-        margin-left: 10px 
+        &.next
+            right: -58px
+            +media-query($on-palm)
+                right: 0
         
+        &.next > svg
+            float: right
+
+            path
+                fill: $brand-color
+
+            &:hover
+                path
+                    fill: $compl-color
+
+        &.prev
+            left: -58px
+            +media-query($on-palm)
+                left: 0px
+            
+        &.prev > svg
+            float: left
+
+            path
+                fill: $brand-color            
+
+            &:hover
+                path
+                    fill: $compl-color

@@ -14,15 +14,11 @@
       </a>
 
       <div class="trigger">
-        {% for my_page in site.pages | sort: 'ordem' %}
-        {% capture url %}
-          {% if item.url contains "://" %}
-            {{ item.url }}
-          {% else %}
-            {{ site.baseurl }}{{ my_page.url }}
+        {% assign ordem = site.pages | sort: 'ordem' %}
+        {% for my_page in ordem %}
+          {% if my_page.nav-title %}
+            <a href="{{ my_page.url }}" class="page-link" data-cell="shrink">{{ my_page.nav-title }}</a>
           {% endif %}
-        {% endcapture %}
-        <a href="{{ url }}" class="page-link" {% if item.url contains "://" %}target="_blank"{% endif %} data-cell="shrink"><b>•</b> {{ my_page.nav-title }}</a>
         {% endfor %}
       </div>
     </nav>
