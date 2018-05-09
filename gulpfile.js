@@ -71,9 +71,11 @@ gulp.task('watch', function () {
         '_sections/**/*',
         '_sass/**/*',
         'css/**/*',
-        '_scripts/**/*',
         'js/**/*'
     ], ['jekyll-rebuild']);
+    gulp.watch([
+        '_scripts/**/*'
+    ], ['bundle']);    
     gulp.watch([
         '_site/css/**/*'
     ], ['post-css']);

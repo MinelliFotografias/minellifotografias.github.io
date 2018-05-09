@@ -1,17 +1,17 @@
-<div class="wrapper">
-    <h1>{{section.title}}</h1>
+<div class="wrapper" data-grid="center">
+    <h1 data-cell="shrink">Trabalhos em Destaque</h1>
 </div>
     <div class="slider-container">
-        <div class="slider carousel" data-controls data-autoplay>
+        <div class="slider carousel" data-controls data-autoplay data-size="4">
             {% for item in site.fotos-principais %}
-                <section class="slide" data-grid="center wrap" data-wrap>
-                    <div data-cell class="foto">
+                <section class="slide" data-area="projeto-destaque">
+                    <div class="foto">
                         <img src="../img/ilustrativas/{{item.img}}.jpg" class="portrait" alt="">
                     </div>
+                    <h3>Título</h3>
+                    <p>casamento</p>
+                    <P>local do casamento</P>
                 </section>
             {% endfor %}    
         </div>
-    </div>
-    <div data-grid="center">
-        <a href="" data-btn data-cell="shrink">Leia Mais</a>
     </div>

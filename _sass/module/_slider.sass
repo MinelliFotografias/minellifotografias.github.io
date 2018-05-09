@@ -88,6 +88,24 @@
                     transform: translate(-110%)
                     opacity: 0
 
+        &[data-size~="4"]
+            .slide
+                width: 23%
+                +media-query($on-palm)
+                    width: 100%
+
+                @for $i from 0 through 3
+                    &[data-order="#{$i}"]
+                        transform: translate(110% * $i)
+                        opacity: 1
+                &[data-order="4"]
+                    transform: translate(440%)
+                    &, & + .slide
+                        opacity: 0
+                &[data-order="last"]
+                    transform: translate(-110%)
+                    opacity: 0                    
+
 .slider-controls
     width: 100%
     background: none
