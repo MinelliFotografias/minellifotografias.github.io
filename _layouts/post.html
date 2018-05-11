@@ -4,13 +4,38 @@ layout: default
 
 <article class="post page-content" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header wrapper">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  <header data-grid="center column" class="post-header wrapper">
+    <h1 data-cell="shrink" class="post-title" itemprop="name headline">{{ page.title }}</h1>
+    <p data-cell="shrink" class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <div data-cell data-grid="spacing center">
+        <p data-cell="1of3 shrink" class="share-text">
+          Compartilhe:
+        </p>
+        <div data-cell="2of3">
+          {% include share/widget.html position='cabeçalho' %}
+        </div>
+    </div>    
   </header>
 
   <div class="post-content" itemprop="articleBody">
+    <div class="foto">
+      <img src="{{site.baseurl}}/img/ilustrativas/{{ page.img }}.jpg" alt="" class="portrait">
+    </div>
     {{ content }}
   </div>
-
+  <div class="wrapper" data-grid="spacing center cols-3">
+    {% for post in site.posts limit: 3 %}
+      {% if post.title == page.title %}
+      {% else %}
+      <section class="slide" data-cell="1of3 shrink" data-area="projeto-destaque">
+        <div class="foto">
+            <img src="{{site.baseurl}}/img/ilustrativas/{{post.img}}.jpg" class="portrait" alt="">
+        </div>
+        <h3>{{post.title}}</h3>
+        <p>{{post.categories}}</p>
+        <P>{{ post.excerpt | strip_html | truncatewords: 15 }}</P>
+    </section>    
+      {% endif %}
+    {% endfor %}
+  </div>
 </article>

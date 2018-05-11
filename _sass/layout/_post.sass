@@ -1,52 +1,109 @@
 
-.post-list 
+.post-list
     margin-left: 0
     list-style: none
-    >li 
+    >li
         margin-bottom: $spacing-unit
 
-.post-meta 
+.post-meta
     font-size: $small-font-size
-    color: $grey-color
+    color: $compl-color
 
-.post-link 
+.post-link
     display: block
     font-size: 24px
 
-.post-header 
+.post-header
     margin-bottom: $spacing-unit
+    .share-text
+        +media-query($on-palm)
+            display: none
 
-.post-title 
+.post-title
     font-size: 42px
     letter-spacing: -1px
     line-height: 1
-    @include media-query($on-laptop) 
+    @include media-query($on-laptop)
         font-size: 36px
 
-.post-content 
-    margin-bottom: $spacing-unit
-
+.post-content
+    @extend .wrapper
+    max-width: $content-width
+    padding-bottom: $spacing-unit
+    border-bottom: 1px solid $compl-color
+    padding-left: 0
+    padding-right: 0
+    +media-query($on-laptop)
+        padding-left: $spacing-unit/2
+        padding-right: $spacing-unit/2
     >
-        h1, h2, h3, h4, h5, h6, p,
-        blockquote, pre, ul, ol, dl,
-        figure, table, %vertical-rhythm
-            @extend .wrapper
+        //h1, h2, h3, h4, h5, h6, p,
+        //blockquote, pre, ul, ol, dl,
+        //figure, table, %vertical-rhythm
+            //@extend .wrapper
 
         ul, ol
             &:not(.seamless)
                 padding-left: $spacing-unit * 2
 
-    h2 
+    h2
         font-size: 32px
-        @include media-query($on-laptop) 
+        @include media-query($on-laptop)
             font-size: 28px
 
-    h3 
+    h3
         font-size: 26px
-        @include media-query($on-laptop) 
+        @include media-query($on-laptop)
             font-size: 22px
 
-    h4 
+    h4
         font-size: 20px
-        @include media-query($on-laptop) 
+        @include media-query($on-laptop)
             font-size: 18px
+
+    .foto
+        height: 316px
+
+        img
+            &.portrait
+                width: 100%
+                height: auto
+                +media-query($on-palm)
+                    width: auto
+                    height: 100%
+
+.share-btn
+    display: inline-block
+    vertical-align: middle
+    text-align: center
+    padding: .5em
+    width: 2.5em
+    height: 2.5em
+    border-radius: 500px
+    &:before
+        content: none
+    svg
+        width: 1.2em
+        height: 1.2em
+        color: inherit
+        *
+            fill: currentcolor
+    &.btn-fb, &.btn-tw, &.btn-li, &.btn-gp, &.btn-wa
+        color: $compl-color
+        &:hover
+            color: $brand-color
+
+[data-area~="projeto-destaque"]
+    height: 300px
+    background-color: $white-color
+    text-align: center
+    .foto
+        height: 160px
+        
+        img
+            &.portrait
+                width: auto
+                height: 100%
+    p
+        margin-top: 0
+        margin-bottom: 0
