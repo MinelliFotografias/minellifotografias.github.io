@@ -7,11 +7,13 @@
                 <section class="slide" data-area="projeto-destaque">
                     <a href="{{ post.url | prepend: site.baseurl }}">
                         <div class="foto">
-                            <img src="{{site.baseurl}}/img/ilustrativas/{{post.img}}.jpg" class="portrait" alt="">
+                            <img src="{{site.baseurl}}/img/ilustrativas/{{post.img-principal}}.jpg" class="portrait" alt="">
                         </div>
-                        <h3>{{post.title}}</h3>
-                        <p>{{post.categories}}</p>
-                        <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+                        <div class="descricao">
+                            <h4>{{post.title}}</h4>
+                            <p>{{post.categories}}</p>
+                            <p>{{ post.excerpt | strip_html | truncatewords: 3 }}</p>
+                        </div>
                     </a>
                 </section>
             {% endfor %}    

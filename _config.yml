@@ -9,7 +9,7 @@ collections:
     title: Uploads
     output: true
   fotos-principais:
-    output: false    
+    output: false
 defaults:
 - scope:
     path: ''

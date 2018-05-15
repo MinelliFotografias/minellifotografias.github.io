@@ -7,7 +7,7 @@
         @extend %section-spacing
 
         [data-area~="projeto-destaque"]
-            height: 300px
+            height: 310px
             background-color: $white-color
             .foto
                 height: 160px
@@ -16,9 +16,11 @@
                     &.portrait
                         width: auto
                         height: 100%
-            p
-                margin-top: 0
-                margin-bottom: 0
+            .descricao
+                padding: 0 $spacing-unit/2
+                p
+                    margin-top: 0
+                    margin-bottom: 0
             
 .foto
     width: 100%
@@ -30,6 +32,7 @@
         top: 50%
         height: 100%
         width: auto
+        max-width: unset
         -webkit-transform: translate(-50%,-50%)
         -ms-transform: translate(-50%,-50%)
         -moz-transform: translate(-50%,-50%)
