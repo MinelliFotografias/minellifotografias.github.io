@@ -3,6 +3,7 @@ title: Notícia teste 3
 date: 2012-03-18 00:00:00 Z
 categories:
 - Noticias
+- destaques
 tags:
 - noticia,
 - teste

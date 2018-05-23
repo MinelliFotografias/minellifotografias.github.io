@@ -3,7 +3,7 @@
 </div>
     <div class="slider-container">
         <div class="slider carousel" data-controls data-autoplay data-size="4">
-            {% for post in site.posts %}
+            {% for post in site.categories.destaques %}
                 <section class="slide" data-area="projeto-destaque">
                     <a href="{{ post.url | prepend: site.baseurl }}">
                         <div class="foto">
@@ -11,7 +11,7 @@
                         </div>
                         <div class="descricao">
                             <h4>{{post.title}}</h4>
-                            <p>{{post.categories}}</p>
+                            <p>{{post.categories.first}}</p>
                             <p>{{ post.excerpt | strip_html | truncatewords: 3 }}</p>
                         </div>
                     </a>

@@ -61,6 +61,14 @@
         @include media-query($on-laptop)
             font-size: 18px    
 
+    [data-grid]
+        scroll-behavior: smooth
+        overflow: hidden
+        max-width: 100%
+        [data-cell]
+            width: 100%
+            flex: 0 0 auto
+            
     .foto-principal
         width: 100%
         overflow: hidden
@@ -87,8 +95,8 @@
             z-index: 2
 
             &.portrait
-                width: auto
-                height: 100%
+                width: 100%
+                height: auto
 
     .slider-container
         position: sticky

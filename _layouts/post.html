@@ -17,14 +17,22 @@ layout: default
     </div>
   </header>
   <div class="post-content" itemprop="articleBody">    
-    {% assign folder_fotos = '/img/ilustrativas/' %}
-    <div class="foto-principal">
-      <img id="{{page.img-principal}}" src="{{site.baseurl}}{{ folder_fotos }}{{page.img-principal}}.jpg" class="portrait" alt="">
-      {% for img in page.imgs %}
-        <img id="{{img}}" src="{{site.baseurl}}{{ folder_fotos }}{{img}}.jpg" class="portrait" alt="">      
-      {% endfor %}
-    </div>
     {{ content }}
+    {% assign folder_fotos = '/img/ilustrativas/' %}    
+    <section data-grid="row">
+      <div data-cell="">
+        <div class="foto-principal">
+          <img id="{{page.img-principal}}" src="{{site.baseurl}}{{ folder_fotos }}{{page.img-principal}}.jpg" class="portrait" alt="">
+        </div>
+      </div>
+        {% for img in page.imgs %}
+        <div data-cell="">
+          <div class="foto-principal">
+            <img id="{{img}}" src="{{site.baseurl}}{{ folder_fotos }}{{img}}.jpg" class="portrait" alt="">      
+          </div>
+        </div>
+        {% endfor %}
+    </section>
     <div class="slider-container">
         <div class="slider carousel" data-controls data-autoplay data-size="4">
           {% for img in page.imgs %}
@@ -50,7 +58,7 @@ layout: default
               <img src="{{site.baseurl}}/img/ilustrativas/{{post.img-principal}}.jpg" class="portrait" alt="">
           </div>
           <h4>{{post.title}}</h4>
-          <p>{{post.categories}}</p>
+          <p>{{post.categories.first}}</p>
           <P>{{ post.excerpt | strip_html | truncatewords: 3 }}</P>
       </section>    
         {% endif %}
