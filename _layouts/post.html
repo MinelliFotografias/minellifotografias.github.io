@@ -26,11 +26,14 @@ layout: default
         </div>
       </div>
         {% for img in page.imgs %}
-        <div data-cell="">
-          <div class="foto-principal">
-            <img id="{{img}}" src="{{site.baseurl}}{{ folder_fotos }}{{img}}.jpg" class="portrait" alt="">      
-          </div>
-        </div>
+          {% if img == page.img-principal %}
+          {% else %}
+            <div data-cell="">
+              <div class="foto-principal">
+                <img id="{{img}}" src="{{site.baseurl}}{{ folder_fotos }}{{img}}.jpg" class="portrait" alt="">      
+              </div>
+            </div>
+          {% endif %}
         {% endfor %}
     </section>
     <div class="slider-container">
@@ -48,19 +51,21 @@ layout: default
     </div>
   </div>
   <section class="wrapper" data-area="albuns-relacionados">
-    <h3 data-grid="center">Veja outros álbuns de {{page.categories}}</h3>
+    <h3 data-grid="center">Veja outros álbuns de {{page.categories.first}}</h3>
     <div data-grid="spacing center">
       {% for post in site.posts limit: 5 %}
         {% if post.title == page.title %}
         {% else %}
-        <section data-cell="1of3 shrink" data-area="projeto-destaque">
-          <div class="foto">
-              <img src="{{site.baseurl}}/img/ilustrativas/{{post.img-principal}}.jpg" class="portrait" alt="">
-          </div>
-          <h4>{{post.title}}</h4>
-          <p>{{post.categories.first}}</p>
-          <P>{{ post.excerpt | strip_html | truncatewords: 3 }}</P>
-      </section>    
+          {% if post.categories.first == page.categories.first %}
+            <section data-cell="1of3 shrink" data-area="projeto-destaque">
+              <div class="foto">
+                  <img src="{{site.baseurl}}/img/ilustrativas/{{post.img-principal}}.jpg" class="portrait" alt="">
+              </div>
+              <h4>{{post.title}}</h4>
+              <p>{{post.categories.first}}</p>
+              <P>{{ post.excerpt | strip_html | truncatewords: 3 }}</P>
+            </section>
+          {% endif %}
         {% endif %}
       {% endfor %}
     </div>
