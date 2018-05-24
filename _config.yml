@@ -2,14 +2,15 @@
 title: Minelli Fotografia
 timezone: America/Sao_Paulo
 collections:
+  fotos-principais:
+    title: Fotos Principais
+    output: false
   posts:
     title: Posts
     output: true
   uploads:
     title: Uploads
     output: true
-  fotos-principais:
-    output: false
 defaults:
 - scope:
     path: ''
@@ -21,9 +22,9 @@ defaults:
     type: posts
   values:
     layout: post
-    permalink: ':categories/:title.html'
+    permalink: ":categories/:title.html"
 description: My preety awesome Github Pages boilerplate ;)
-baseurl: ""
+baseurl: ''
 url: 
 markdown: kramdown
 sass:

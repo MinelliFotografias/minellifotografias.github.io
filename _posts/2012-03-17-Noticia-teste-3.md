@@ -1,13 +1,14 @@
 ---
 title: Notícia teste 3
-date: 2012-03-18 00:00:00 Z
+date: 2012-03-17 21:00:00 -03:00
 categories:
 - Noticias
 - destaques
 tags:
 - noticia,
 - teste
-excerpt: 'Instituições financeiras oferecem vantagens para quem deseja investir em franquias, mas ainda precisa de apoio'
+excerpt: Instituições financeiras oferecem vantagens para quem deseja investir em
+  franquias, mas ainda precisa de apoio
 img-principal: noticia-3
 ---
 
