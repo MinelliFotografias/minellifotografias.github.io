@@ -1,5 +1,5 @@
 ---
-title: Notícia teste 1
+title: Casamento A&P
 date: 2012-03-17 21:00:00 -03:00
 categories:
 - Noticias
