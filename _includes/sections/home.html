@@ -2,12 +2,16 @@
     <h1 data-cell="shrink">Trabalhos em Destaque</h1>
 </div>
     <div class="slider-container">
+        {% if site.categories.destaques.size > 4 %}        
         <div class="slider carousel" data-controls data-autoplay data-size="4">
+        {% else %}
+        <div class="slider without" data-grid="spacing row">
+        {% endif %}
             {% for post in site.categories.destaques %}
                 <section class="slide" data-area="projeto-destaque">
                     <a href="{{ post.url | prepend: site.baseurl }}">
                         <div class="foto">
-                            <img src="{{site.baseurl}}/img/ilustrativas/{{post.img-principal}}.jpg" class="portrait" alt="">
+                            <img src="{{site.baseurl}}{{post.principal-image}}" class="portrait" alt="">
                         </div>
                         <div class="descricao">
                             <h4>{{post.title}}</h4>

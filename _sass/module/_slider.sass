@@ -41,7 +41,6 @@
 
         .slide
             width: 15%
-            text-align: center
 
             @for $i from 0 through 5
                 &[data-order="#{$i}"]
@@ -87,7 +86,7 @@
                         opacity: 0
                 &[data-order="last"]
                     transform: translate(-110%)
-                    opacity: 0
+                    opacity: 0      
 
         &[data-size~="4"]
             .slide
@@ -106,6 +105,24 @@
                 &[data-order="last"]
                     transform: translate(-110%)
                     opacity: 0                    
+
+    &.without
+        .slide
+            width: 20%
+            opacity: 1
+            position: relative
+
+            @for $i from 0 through 5
+                &[data-order="#{$i}"]
+                    transform: none
+                    opacity: 1
+            &[data-order="6"]
+                transform: none
+            &[data-order="last"]
+                transform: none
+                opacity: 0
+            img
+                display: inline-block                    
 
 .slider-controls
     width: 100%

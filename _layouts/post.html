@@ -18,19 +18,18 @@ layout: default
   </header>
   <div class="post-content" itemprop="articleBody">    
     {{ content }}
-    {% assign folder_fotos = '/img/ilustrativas/' %}    
     <section data-grid="row">
       <div data-cell>
         <div class="foto-principal">
-          <img id="{{page.img-principal}}" src="{{site.baseurl}}{{ folder_fotos }}{{page.img-principal}}.jpg" class="portrait" alt="">
+          <img id="{{page.principal-image}}" src="{{site.baseurl}}{{page.principal-image}}" class="portrait" alt="">
         </div>
       </div>
-        {% for img in page.imgs %}
-          {% if img == page.img-principal %}
+        {% for img in page.images %}
+          {% if img == page.principal-image %}
           {% else %}
             <div data-cell="">
               <div class="foto-principal">
-                <img id="{{img}}" src="{{site.baseurl}}{{ folder_fotos }}{{img}}.jpg" class="portrait" alt="">      
+                <img id="{{img}}" src="{{site.baseurl}}{{img}}" class="portrait" alt="">      
               </div>
             </div>
           {% endif %}
@@ -38,11 +37,11 @@ layout: default
     </section>
     <div class="slider-container">
         <div class="slider carousel" data-controls data-autoplay data-size="4">
-          {% for img in page.imgs %}
+          {% for img in page.images %}
             <section class="slide">
                 <a href="#{{img}}">
                     <div class="foto">
-                        <img src="{{site.baseurl}}{{ folder_fotos }}{{img}}.jpg" class="portrait" alt="">
+                        <img src="{{site.baseurl}}{{img}}" class="portrait" alt="">
                     </div>
                 </a>
             </section>
@@ -59,11 +58,11 @@ layout: default
           {% if post.categories.first == page.categories.first %}
             <section data-cell="1of3 shrink" data-area="projeto-destaque">
               <div class="foto">
-                  <img src="{{site.baseurl}}/img/ilustrativas/{{post.img-principal}}.jpg" class="portrait" alt="">
+                  <img src="{{site.baseurl}}{{post.principal-image}}" class="portrait" alt="">
               </div>
               <h4>{{post.title}}</h4>
               <p>{{post.categories.first}}</p>
-              <P>{{ post.excerpt | strip_html | truncatewords: 3 }}</P>
+              <p>{{ post.excerpt | strip_html | truncatewords: 3 }}</p>
             </section>
           {% endif %}
         {% endif %}

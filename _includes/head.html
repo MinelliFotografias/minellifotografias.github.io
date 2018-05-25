@@ -5,7 +5,52 @@
 
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <style>
+    @font-face
+    {
+        font-family: 'montserratregular';
+        src: url('{{site.baseurl}}/fonts/montserrat-regular-webfont.eot');
+        src: url('{{site.baseurl}}/fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'), url('{{site.baseurl}}/fonts/montserrat-regular-webfont.ttf') format('truetype'), url('{{site.baseurl}}/fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
 
+    @font-face
+    {
+        font-family: 'montserratsemibold';
+        src: url('{{site.baseurl}}/fonts/montserrat-semibold-webfont.eot');
+        src: url('{{site.baseurl}}/fonts/montserrat-semibold-webfont.eot?#iefix') format('embedded-opentype'), url('{{site.baseurl}}/fonts/montserrat-semibold-webfont.ttf') format('truetype'), url('{{site.baseurl}}/fonts/montserrat-semibold-webfont.svg#montserratsemibold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face
+    {
+        font-family: 'montserratitalic';
+        src: url('{{site.baseurl}}/fonts/montserrat-italic-webfont.eot');
+        src: url('{{site.baseurl}}/fonts/montserrat-italic-webfont.eot?#iefix') format('embedded-opentype'), url('{{site.baseurl}}/fonts/montserrat-italic-webfont.ttf') format('truetype'), url('{{site.baseurl}}/fonts/montserrat-italic-webfont.svg#montserratitalic') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }        
+
+    @font-face
+    {
+        font-family: 'montserratmedium';
+        src: url('{{site.baseurl}}/fonts/montserrat-medium-webfont.eot');
+        src: url('{{site.baseurl}}/fonts/montserrat-medium-webfont.eot?#iefix') format('embedded-opentype'), url('{{site.baseurl}}/fonts/montserrat-medium-webfont.ttf') format('truetype'), url('{{site.baseurl}}/fonts/montserrat-medium-webfont.svg#montserratmedium') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face
+    {
+        font-family: 'montserratextralight';
+        src: url('{{site.baseurl}}/fonts/montserrat-extralight-webfont.eot');
+        src: url('{{site.baseurl}}/fonts/montserrat-extralight-webfont.eot?#iefix') format('embedded-opentype'), url('{{site.baseurl}}/fonts/montserrat-extralight-webfont.ttf') format('truetype'), url('{{site.baseurl}}/fonts/montserrat-extralight-webfont.svg#montserratextralight') format('svg');
+        font-weight: normal;
+        font-style: normal;  
+    }
+  </style>
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
