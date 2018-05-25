@@ -5,18 +5,20 @@ categories:
 - Noticias
 - destaques
 tags:
-- noticia,
+- noticia
+- ''
 - destaques
 excerpt: Instituições financeiras oferecem vantagens para quem deseja investir em
   franquias, mas ainda precisa de apoio
-img-principal: noticia-1
-imgs:
-- noticia-1
-- noticia-2
-- noticia-3
-- noticia-1
-- noticia-2
-- noticia-3
+principal-image: "/uploads/casamento(228).jpg"
+images:
+- "/uploads/casamento(178).jpg"
+- "/uploads/casamento(149).jpg"
+- "/uploads/casamento(147).jpg"
+- "/uploads/casamento(142).jpg"
+- "/uploads/casamento(86).jpg"
+- "/uploads/casamento(84).jpg"
+Field name: 
 ---
 
 Instituições financeiras oferecem vantagens para quem deseja investir em franquias, mas ainda precisa de apoio Instituições financeiras oferecem vantagens para quem deseja investir em franquias, mas ainda precisa de apoio Instituições financeiras oferecem vantagens para quem deseja investir em franquias, mas ainda precisa de apoio Instituições financeiras oferecem vantagens para quem deseja investir em franquias, mas ainda precisa de apoio
