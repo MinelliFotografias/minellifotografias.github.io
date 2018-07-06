@@ -12,7 +12,7 @@ imgs:
 - https://farm1.staticflickr.com/845/29355020728_db18f77243_k.jpg
 - https://farm1.staticflickr.com/920/41416477480_b05a2efbb2_k.jpg
 - https://farm2.staticflickr.com/1830/29355010518_62e6f58b20_k.jpg
-- https://www.flickr.com/gp/158515550@N04/z00U13
+- https://farm1.staticflickr.com/927/42507583244_7f73c5fd99_k.jpg
 ---
 
 teste teste teste teste teste teste teste
