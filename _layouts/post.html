@@ -21,7 +21,7 @@ layout: default
     <section data-grid="row">
       <div data-cell>
         <div class="foto-principal">
-          <img id="{{page.principal-image}}" src="{{site.baseurl}}{{page.principal-image}}" class="portrait" alt="">
+          <img id="{{page.principal-image}}" src="{{page.principal-image}}" class="portrait" alt="">
         </div>
       </div>
         {% for img in page.images %}
@@ -29,7 +29,7 @@ layout: default
           {% else %}
             <div data-cell="">
               <div class="foto-principal">
-                <img id="{{img}}" src="{{site.baseurl}}{{img}}" class="portrait" alt="">      
+                <img id="{{img}}" src="{{img}}" class="portrait" alt="">      
               </div>
             </div>
           {% endif %}
@@ -41,7 +41,7 @@ layout: default
             <section class="slide">
                 <a href="#{{img}}">
                     <div class="foto">
-                        <img src="{{site.baseurl}}{{img}}" class="portrait" alt="">
+                        <img src="{{img}}" class="portrait" alt="">
                     </div>
                 </a>
             </section>
