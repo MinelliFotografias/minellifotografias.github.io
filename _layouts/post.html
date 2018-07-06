@@ -21,11 +21,11 @@ layout: default
     <section data-grid="row">
       <div data-cell>
         <div class="foto-principal">
-          <img id="{{page.principal-image}}" src="{{page.principal-image}}" class="portrait" alt="">
+          <img id="{{page.principal-img}}" src="{{page.principal-img}}" class="portrait" alt="">
         </div>
       </div>
-        {% for img in page.images %}
-          {% if img == page.principal-image %}
+        {% for img in page.imgs %}
+          {% if img == page.principal-img %}
           {% else %}
             <div data-cell="">
               <div class="foto-principal">
@@ -37,7 +37,7 @@ layout: default
     </section>
     <div class="slider-container">
         <div class="slider carousel" data-controls data-autoplay data-size="4">
-          {% for img in page.images %}
+          {% for img in page.imgs %}
             <section class="slide">
                 <a href="#{{img}}">
                     <div class="foto">
@@ -58,7 +58,7 @@ layout: default
           {% if post.categories.first == page.categories.first %}
             <section data-cell="1of3 shrink" data-area="projeto-destaque">
               <div class="foto">
-                  <img src="{{site.baseurl}}{{post.principal-image}}" class="portrait" alt="">
+                  <img src="{{post.principal-img}}" class="portrait" alt="">
               </div>
               <h4>{{post.title}}</h4>
               <p>{{post.categories.first}}</p>
