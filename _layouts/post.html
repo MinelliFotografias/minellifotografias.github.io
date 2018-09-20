@@ -37,14 +37,16 @@ layout: default
     </section>
     <div class="slider-container">
       <div class="slider carousel" data-controls data-autoplay data-size="4">
-        {% for img in page.imgs %}
+        {% for item in page.imgs %}
           <section class="slide cssbox">
-              <a id="{{img}}" href="#{{img}}">
+              <a id="{{item.img.id}}" href="#{{item.img.id}}">
                   <div class="foto">
-                      <img src="{{img}}" class="cssbox_thumb" alt="">
-                      <span class="cssbox_full"><img src="{{img}}" alt=""></span>
+                      <img src="{{item.img.url}}" class="cssbox_thumb" alt="">
+                      <span class="cssbox_full"><img src="{{item.img.url}}" alt=""></span>
                   </div>                  
               </a>
+              <a class="cssbox_close" href="#void"></a>
+              <a class="cssbox_next" href="#image2">&gt;</a>              
           </section>
         {% endfor %}
       </div>       
