@@ -19,12 +19,12 @@ layout: default
   <div class="post-content" itemprop="articleBody">    
     {{ content }}
     <section data-grid="row">
-      <div data-cell>
+      <!-- <div data-cell>
         <div class="foto-principal">
           <img id="{{page.principal-img}}" src="{{page.principal-img}}" class="portrait" alt="">
         </div>
-      </div>
-        {% for img in page.imgs %}
+      </div> -->
+        <!-- {% for img in page.imgs %}
           {% if img == page.principal-img %}
           {% else %}
             <div data-cell="">
@@ -33,22 +33,43 @@ layout: default
               </div>
             </div>
           {% endif %}
-        {% endfor %}
+        {% endfor %} -->
     </section>
     <div class="slider-container">
-        <div class="slider carousel" data-controls data-autoplay data-size="4">
-          {% for img in page.imgs %}
-            <section class="slide">
-                <a href="#{{img}}">
-                    <div class="foto">
-                        <img src="{{img}}" class="portrait" alt="">
-                    </div>
-                </a>
-            </section>
-            {% endfor %}
-          </div>                  
+      <div class="slider carousel" data-controls data-autoplay data-size="4">
+        {% for img in page.imgs %}
+          <section class="slide cssbox">
+              <a href="#{{img}}" id="{{img}}">
+                  <div class="foto">
+                      <img src="{{img}}" class="cssbox_thumb" alt="">
+                  </div>
+                  <span class="cssbox_full"><img src="{{img}}" alt=""></span>
+              </a>
+          </section>
+        {% endfor %}
+      </div>       
     </div>
   </div>
+    <a id="image1" href="#image1"><img class="cssbox_thumb" src="https://unsplash.it/300/200?image=1044" height="300" width="320" />
+      <span class="cssbox_full"><img src="https://unsplash.it/1280/768?image=1044" /></span>
+    </a>
+    <a class="cssbox_close" href="#void"></a>
+    <a class="cssbox_next" href="#image2">&gt;</a>
+  <div class="cssbox">
+    <a id="image2" href="#image2"><img class="cssbox_thumb" src="https://unsplash.it/300/200?image=1040" height="300" width="320" />
+      <span class="cssbox_full"><img src="https://unsplash.it/1280/768?image=1040" /></span>
+    </a>
+    <a class="cssbox_close" href="#void"></a>
+    <a class="cssbox_prev" href="#image1">&lt;</a>
+    <a class="cssbox_next" href="#image3">&gt;</a>
+  </div>
+  <div class="cssbox">
+    <a id="image3" href="#image3"><img class="cssbox_thumb" src="https://unsplash.it/300/200?image=1025" height="300" width="320" />
+      <span class="cssbox_full"><img src="https://unsplash.it/1280/768?image=1025" /></span>
+    </a>
+    <a class="cssbox_close" href="#void"></a>
+    <a class="cssbox_prev" href="#image2">&lt;</a>
+  </div>     
   <section class="wrapper" data-area="albuns-relacionados">
     <h3 data-grid="center">Veja outros álbuns de {{page.categories.first}}</h3>
     <div data-grid="spacing center">
