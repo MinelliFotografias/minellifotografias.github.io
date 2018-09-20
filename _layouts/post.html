@@ -39,18 +39,19 @@ layout: default
       <div class="slider carousel" data-controls data-autoplay data-size="4">
         {% for img in page.imgs %}
           <section class="slide cssbox">
-              <a href="#{{img}}" id="{{img}}">
+              <a id="{{img}}" href="#{{img}}">
                   <div class="foto">
                       <img src="{{img}}" class="cssbox_thumb" alt="">
-                  </div>
-                  <span class="cssbox_full"><img src="{{img}}" alt=""></span>
+                      <span class="cssbox_full"><img src="{{img}}" alt=""></span>
+                  </div>                  
               </a>
           </section>
         {% endfor %}
       </div>       
     </div>
   </div>
-    <a id="image1" href="#image1"><img class="cssbox_thumb" src="https://unsplash.it/300/200?image=1044" height="300" width="320" />
+    <a id="image1" href="#image1">
+      <img class="cssbox_thumb" src="https://unsplash.it/300/200?image=1044" height="300" width="320" />
       <span class="cssbox_full"><img src="https://unsplash.it/1280/768?image=1044" /></span>
     </a>
     <a class="cssbox_close" href="#void"></a>
