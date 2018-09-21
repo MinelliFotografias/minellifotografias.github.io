@@ -38,15 +38,18 @@ layout: default
     <div class="slider-container">
       <div class="slider carousel" data-controls data-autoplay data-size="4">
         {% for item in page.imgs %}
+        {% assign prev = page.imgs[forloop.index0-1] %}
+        {% assign next = page.imgs[forloop.index] %}
+        {{prev.id}}{{next.id}}
           <section class="slide cssbox">
-              <a id="{{item.img.id}}" href="#{{item.img.id}}">
+              <a id="{{item.id}}" href="#{{item.id}}">
                   <div class="foto">
-                      <img src="{{item.img.url}}" class="cssbox_thumb" alt="">
-                      <span class="cssbox_full"><img src="{{item.img.url}}" alt=""></span>
+                      <img src="{{item.url}}" class="cssbox_thumb" alt="">
+                      <span class="cssbox_full"><img src="{{item.url}}" alt=""></span>
                   </div>                  
               </a>
               <a class="cssbox_close" href="#void"></a>
-              <a class="cssbox_next" href="#image2">&gt;</a>              
+              <a class="cssbox_next" href="#{{forloop.index}}">&gt;</a>              
           </section>
         {% endfor %}
       </div>       
